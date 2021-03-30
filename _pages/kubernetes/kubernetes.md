@@ -105,7 +105,7 @@ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pict
 - **[istio](https://github.com/istio/istio)** - Connect, secure, control, and observe services.
 - **[kubernetes-ingress](https://github.com/nginxinc/kubernetes-ingress)** - NGINX and NGINX Plus Ingress Controllers for Kubernetes
 - **[autopilot](https://docs.solo.io/autopilot/latest)** - Autopilot is an SDK and toolkit for developing and deploying service mesh operators.
-- 
+
 ## Kubernetes Security Tools
 
 - **[kubestriker](https://github.com/vchinnipilli/kubestriker)** - A Blazing fast Security Auditing tool for kubernetes!!

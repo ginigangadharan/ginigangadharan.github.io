@@ -91,6 +91,8 @@ pip install infoblox-client
 Find the WAPI documentation from `https://<GRID_IP_ADDRESS>/wapidoc/` url.
 
 ```yaml
+## list WAPI versions
+https://10.10.10.10/wapi/v1.0/?_schema
 
 ## samples
 https://10.6.1.216/wapi/v2.7/networkview?name=default
