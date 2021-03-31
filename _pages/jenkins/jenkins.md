@@ -27,6 +27,10 @@ titleshort: jenkins
     - [Conditional Notificaton](#conditional-notificaton)
   - [WHEN DIRECTIVE](#when-directive)
   - [GIT ENVIRONMENT VARIABLES](#git-environment-variables)
+  - [CREDENTIALS](#credentials)
+  - [OPTIONS AND CONFIGURATIONS](#options-and-configurations)
+    - [SET TIMEOUT](#set-timeout)
+  - [PARAMETERS](#parameters)
 - [Start Jenkins inside a container](#start-jenkins-inside-a-container)
   - [Run `jenkins` as a docker container](#run-jenkins-as-a-docker-container)
   - [Get the Password](#get-the-password)
@@ -505,6 +509,56 @@ stage('Generate Reports') {
     sh 'tar -czv target/reports.tar.gz target/reports'
     archiveArtifacts 'target/*.tar.gz'
     echo "Finished run for commit ${ env.GIT_COMMIT.substring(0,6) }"
+  }
+}
+```
+
+## CREDENTIALS
+
+```groovy
+...
+stage('Deploy Reports')
+    steps {
+    ...
+        withCredentials(bindings: [string(credentialsId: 'my-elastic-key', variable: 'ELASTIC_ACCESS_KEY')]) {
+            // Environment Variable available in the remote shell
+            sh "env | grep ELASTIC_ACCESS_KEY"
+            sh "echo ${ELASTIC_ACCESS_KEY} > secret-file.txt"
+        }
+...
+}
+```
+
+## OPTIONS AND CONFIGURATIONS
+
+### SET TIMEOUT
+
+```groovy
+//timeout for the entire Pipeline (Note the double quotes around DAYS
+options {
+  timeout(time: 3, unit: "DAYS")
+}
+
+//timeout for an "input" stage
+steps {
+  timeout(time:3, unit:"DAYS") {
+      input(message: "Deploy to Stage", ok: "Yes, let's do it!")
+  }
+}
+```
+
+## PARAMETERS
+
+```groovy
+pipeline {
+  agent none
+  parameters {
+    string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '')
+  }
+  stages {
+    stage ('Deploy') {
+      echo "Deploying to ${DEPLOY_ENV}"
+    }
   }
 }
 ```
