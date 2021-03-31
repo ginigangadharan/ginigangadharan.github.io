@@ -97,6 +97,9 @@ https://10.10.10.10/wapi/v1.0/?_schema
 ## samples
 https://10.6.1.216/wapi/v2.7/networkview?name=default
 https://10.6.1.216/wapi/v2.7/networkview?name=default&_return_type=json
+
+## get the rpz url entry
+https://{{ infoblox_wapi_server }}/wapi/{{ infoblox_wapi_version }}/allrpzrecords?zone={{ infoblox_rpz_name }}&_return_fields%2B=rpz_rule&_return_as_object=1&name={{ infoblox_url_name_to_add }}"
 ```
 
 ### Sample API Calls

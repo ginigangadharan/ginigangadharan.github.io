@@ -19,6 +19,14 @@ titleshort: jenkins
   - [PIPELINE-AS-CODE](#pipeline-as-code)
   - [Basic Jenkins Pipeline Sections](#basic-jenkins-pipeline-sections)
   - [Jenkins Parallel Pipeline](#jenkins-parallel-pipeline)
+  - [SCRIPTED PIPELINE](#scripted-pipeline)
+  - [Multi-environment Pipeline](#multi-environment-pipeline)
+  - [Post Section in Jenkins Pipeline](#post-section-in-jenkins-pipeline)
+  - [Environment Directive](#environment-directive)
+  - [Notifications](#notifications)
+    - [Conditional Notificaton](#conditional-notificaton)
+  - [WHEN DIRECTIVE](#when-directive)
+  - [GIT ENVIRONMENT VARIABLES](#git-environment-variables)
 - [Start Jenkins inside a container](#start-jenkins-inside-a-container)
   - [Run `jenkins` as a docker container](#run-jenkins-as-a-docker-container)
   - [Get the Password](#get-the-password)
@@ -129,6 +137,374 @@ pipeline {
         sh './jenkins/deploy.sh staging'
       }
     }
+  }
+}
+```
+
+## SCRIPTED PIPELINE
+
+```yaml
+stage('Build') {
+    parallel linux: {
+        node('linux') {
+            checkout scm
+            try {
+                sh 'make'
+            }
+            finally {
+                junit '**/target/*.xml'
+            }
+        }
+    },
+    windows: {
+        node('windows') {
+            /* .. snip .. */
+        }
+    }
+}
+```
+
+## Multi-environment Pipeline
+
+```yaml
+pipeline {
+  agent none
+  stages {
+    stage('Fluffy Build') {
+      parallel {
+        stage('Build Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+
+          }
+          steps {
+            sh './jenkins/build.sh'
+            stash(name: 'Java 8', includes: 'target/**')
+          }
+        }
+        stage('Build Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+
+          }
+          steps {
+            sh './jenkins/build.sh'
+            archiveArtifacts 'target/*.jar'
+            stash(name: 'Java 7', includes: 'target/**')
+          }
+        }
+      }
+    }
+    stage('Fluffy Test') {
+      parallel {
+        stage('Backend Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-backend.sh'
+            junit 'target/surefire-reports/**/TEST*.xml'
+          }
+        }
+        stage('Frontend') {
+          agent {
+            node {
+              label 'java8'
+            }
+
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-frontend.sh'
+            junit 'target/test-results/**/TEST*.xml'
+          }
+        }
+        stage('Performance Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-performance.sh'
+          }
+        }
+        stage('Static Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-static.sh'
+          }
+        }
+        stage('Backend Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-backend.sh'
+            junit 'target/surefire-reports/**/TEST*.xml'
+          }
+        }
+        stage('Frontend Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-frontend.sh'
+            junit 'target/test-results/**/TEST*.xml'
+          }
+        }
+        stage('Performance Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-performance.sh'
+          }
+        }
+        stage('Static Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-static.sh'
+          }
+        }
+      }
+    }
+    stage('Confirm Deploy') {
+      steps {
+        input(message: 'Okay to Deploy to Staging?', ok: 'Let\'s Do it!')
+      }
+    }
+    stage('Fluffy Deploy') {
+      agent {
+        node {
+          label 'java7'
+        }
+
+      }
+      steps {
+        unstash 'Java 7'
+        sh './jenkins/deploy.sh staging'
+      }
+    }
+  }
+}
+```
+
+## Post Section in Jenkins Pipeline
+
+```yaml
+pipeline {
+  stages {
+    stage('Buzz Build') {
+      parallel {
+        stage('Build Java 7') {
+          steps {
+            sh """
+              echo I am a $BUZZ_NAME!
+              ./jenkins/build.sh
+            """
+          }
+          post {
+            always {
+              archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
+            }
+            success {
+              stash(name: 'Buzz Java 7', includes: 'target/**')
+            }
+          }
+        }
+  ...
+}
+```
+
+## Environment Directive
+
+- Examples include BUILD_NUMBER, JENKINS_URL and EXECUTOR_NUMBER
+
+```groovy
+pipeline {
+    agent any
+    environment {
+        CC = 'clang'
+    }
+    stages {
+        stage('Example') {
+            environment {
+                AN_ACCESS_KEY = "SECRET" //credentials('my-predefined-secret-text')
+            }
+            steps {
+                sh 'printenv'
+```
+
+## Notifications
+
+```groovy
+stages {
+  stage ('Start') {
+    steps {
+      // send build started notifications
+      slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+    }
+  }
+}
+```
+
+```groovy
+// send to email
+emailext (
+  subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+  body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+  recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+)
+```
+
+### Conditional Notificaton
+
+```groovy
+// on success
+post {
+  success {
+    slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+
+    emailext (
+      subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: """<p>SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+    )
+  }
+}
+
+// on fail
+failure {
+ slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+
+ emailext (
+   subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+   body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+     <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+   recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+  )
+}
+```
+
+## WHEN DIRECTIVE
+
+**BUILT-IN CONDITIONS**
+
+```groovy
+// branch — Execute the stage when the branch being built matches the branch pattern given:
+when {
+  branch 'master'
+}
+
+//environment — Execute the stage when the specified environment variable is set to the given value:
+when {
+  environment name: 'DEPLOY_TO', value: 'production'
+}
+
+//expression — Execute the stage when the specified expression evaluates to true:
+when {
+  expression {
+    return params.DEBUG_BUILD
+  }
+}
+```
+
+**BUILT-IN NESTED CONDITIONS**
+
+```groovy
+// allOf — Execute the stage when all nested conditions are true:
+when {
+  allOf {
+    branch 'master'
+    environment name: 'DEPLOY_TO', value: 'production' // AND
+  }
+}
+
+//anyOf — Execute the stage when at least one of the nested conditions is true
+when {
+  anyOf {
+    branch 'master'
+    branch 'staging' // OR
+  }
+}
+
+// not — Execute the stage when the nested condition is false.
+when { not { branch 'master' } }
+```
+
+```groovy
+...
+stage('Confirm Deploy to Staging') {
+    when {
+      branch 'master'
+    }
+    steps {
+      input(message: 'Deploy to Stage', ok: 'Yes, let\'s do it!')
+    }
+  }
+  stage('Deploy to Staging') {
+    agent {
+      node {
+        label 'java8'
+      }
+    }
+    when {
+      branch 'master'
+    }
+    steps {
+      unstash 'Buzz Java 8'
+      sh './jenkins/deploy.sh staging'
+    }
+  }
+...
+```
+
+## GIT ENVIRONMENT VARIABLES
+
+```groovy
+stage('Generate Reports') {
+  steps {
+    sh './jenkins/generate-reports.sh'
+    sh 'tar -czv target/reports.tar.gz target/reports'
+    archiveArtifacts 'target/*.tar.gz'
+    echo "Finished run for commit ${ env.GIT_COMMIT.substring(0,6) }"
   }
 }
 ```
