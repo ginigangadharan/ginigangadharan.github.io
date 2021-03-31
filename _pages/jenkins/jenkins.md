@@ -31,6 +31,9 @@ titleshort: jenkins
   - [OPTIONS AND CONFIGURATIONS](#options-and-configurations)
     - [SET TIMEOUT](#set-timeout)
   - [PARAMETERS](#parameters)
+  - [BUILD TOOLS TO CREATE CODE FOR STEPS](#build-tools-to-create-code-for-steps)
+  - [SHARED LIBRARIES](#shared-libraries)
+  - [BEST PRACTICES](#best-practices)
 - [Start Jenkins inside a container](#start-jenkins-inside-a-container)
   - [Run `jenkins` as a docker container](#run-jenkins-as-a-docker-container)
   - [Get the Password](#get-the-password)
@@ -563,6 +566,216 @@ pipeline {
 }
 ```
 
+## BUILD TOOLS TO CREATE CODE FOR STEPS
+
+- Make
+- Apache Ant
+- Apache Maven
+- Gradle
+- NPM
+
+Pipelines using `when`, `post` etc
+
+```groovy
+pipeline {
+  agent none
+  stages {
+    stage('Fluffy Build') {
+      parallel {
+        stage('Build Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+          }
+          steps {
+            sh './jenkins/build.sh'
+          }
+          post {
+            success {
+              stash(name: 'Java 8', includes: 'target/**')
+            }
+          }
+        }
+        stage('Build Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+          }
+          steps {
+            sh './jenkins/build.sh'
+          }
+          post {
+            success {
+              archiveArtifacts 'target/*.jar'
+              stash(name: 'Java 7', includes: 'target/**')
+            }
+          }
+        }
+      }
+    }
+    stage('Fluffy Test') {
+      parallel {
+        stage('Backend Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-backend.sh'
+          }
+          post {
+            always {
+              junit 'target/surefire-reports/**/TEST*.xml'
+            }
+          }
+        }
+        stage('Frontend') {
+          agent {
+            node {
+              label 'java8'
+            }
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-frontend.sh'
+          }
+          post {
+            always {
+              junit 'target/test-results/**/TEST*.xml'
+            }
+          }
+        }
+        stage('Performance Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-performance.sh'
+          }
+        }
+        stage('Static Java 8') {
+          agent {
+            node {
+              label 'java8'
+            }
+          }
+          steps {
+            unstash 'Java 8'
+            sh './jenkins/test-static.sh'
+          }
+        }
+        stage('Backend Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-backend.sh'
+          }
+          post {
+            always {
+              junit 'target/surefire-reports/**/TEST*.xml'
+            }
+          }
+        }
+        stage('Frontend Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-frontend.sh'
+          }
+          post {
+            always {
+              junit 'target/test-results/**/TEST*.xml'
+            }
+          }
+        }
+        stage('Performance Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-performance.sh'
+          }
+        }
+        stage('Static Java 7') {
+          agent {
+            node {
+              label 'java7'
+            }
+          }
+          steps {
+            unstash 'Java 7'
+            sh './jenkins/test-static.sh'
+          }
+        }
+      }
+    }
+    stage('Confirm Deploy') {
+      when {
+        branch 'master'
+      }
+      steps {
+        input(message: 'Okay to Deploy to Staging?', ok: 'Let\'s Do it!')
+      }
+    }
+    stage('Fluffy Deploy') {
+      when {
+        branch 'master'
+      }
+      agent {
+        node {
+          label 'java7'
+        }
+      }
+      steps {
+        unstash 'Java 7'
+        sh "./jenkins/deploy.sh ${params.DEPLOY_TO}"
+      }
+    }
+  }
+  parameters {
+    string(name: 'DEPLOY_TO', defaultValue: 'dev', description: '')
+  }
+}
+```
+
+## SHARED LIBRARIES
+
+## BEST PRACTICES
+
+IMPLEMENT A TRIGGER
+```groovy
+pipeline {
+    agent any
+    triggers {
+        cron('H */4 * * 1-5')
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+```
 # Start Jenkins inside a container
 
 Refer **[Docker Hub](https://hub.docker.com/r/jenkins/jenkins/)**
