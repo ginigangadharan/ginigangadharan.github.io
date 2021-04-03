@@ -3,6 +3,7 @@ layout: post
 title: Ansible Use Case Gallery
 author: gini
 categories: [ ansible ]
+image: "assets/images/2021/lenny-kuhne-jHZ70nRk7Ns-unsplash -automation.jpg"
 tags: []
 show-avatar: false
 permalink: /ansible-use-case-gallery

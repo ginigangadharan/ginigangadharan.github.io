@@ -858,3 +858,5 @@ networks:
 
 more...
 - [Complete Jenkins Pipeline Tutorial | Jenkinsfile explained](https://www.youtube.com/watch?v=7KCS70sCoK0)
+- [Jenkins-Nexus Demo](https://medium.com/appfleet/publishing-artifacts-to-sonatype-nexus-using-jenkins-pipelines-db8c1412dc7)
+- [Publishing Artifacts to Sonatype Nexus using Jenkins Pipelines](https://appfleet.com/blog/publishing-artifacts-to-nexus-using-jenkins-pipelines/)
