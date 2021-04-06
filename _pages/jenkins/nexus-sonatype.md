@@ -29,3 +29,8 @@ docker exec -i nexus_repo cat /nexus-data/admin.password
 
 ## access the portal on http://your-ip-addr:8081
 ```
+
+
+```bash
+## dockerfile for ansible
+
