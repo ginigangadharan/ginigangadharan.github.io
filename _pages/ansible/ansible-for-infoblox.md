@@ -100,12 +100,20 @@ https://10.6.1.216/wapi/v2.7/networkview?name=default&_return_type=json
 
 ## get the rpz url entry
 https://{{ infoblox_wapi_server }}/wapi/{{ infoblox_wapi_version }}/allrpzrecords?zone={{ infoblox_rpz_name }}&_return_fields%2B=rpz_rule&_return_as_object=1&name={{ infoblox_url_name_to_add }}"
+
 ```
 
 ### Sample API Calls
 
 ```bash
-$ curl -k -s -H 'content-type: application/json' -X POST --user admin:adminadmin "https://10.6.1.216/wapi/v2.7/record:rpz:a?_return_fields%2B=name,rp_zone&_return_as_object=1" -d '{"name":"serverblock.com.category-01","ipv4addr":"1.1.1.156","rp_zone":"category-01"}'
+$ curl -k -s \
+  -H 'content-type: application/json' \
+  -X POST \
+  --user admin:adminadmin \
+  "https://10.6.1.216/wapi/v2.7/record:rpz:a?_return_fields%2B=name,rp_zone&_return_as_object=1" \
+  -d '{"name":"serverblock.com.category-01","ipv4addr":"1.1.1.156","rp_zone":"category-01"}'
+
+  "https://10.6.1.216/wapi/v2.11/record:rpz:a?_return_fields%2B=name,rp_zone&_return_as_object=1"
 
 ```
 
