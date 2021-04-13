@@ -68,7 +68,8 @@ This is a page where I keep all those list of tools on internet, which we use fo
 This is useful for testing email functionality from your application or solutions as you dont need to setup an SMTP server by your own.
 - [SendinBlue](https://app.sendinblue.com/account/billing)
 - [mailtrap](https://mailtrap.io/)
-  
+- [HTML Minifier](https://www.willpeavy.com/tools/minifier/) - Minify HTML and any CSS or JS included in your markup
+
 ## Meeting Tools
 - [Egg Timer](https://e.ggtimer.com/) -  a simple countdown timer.
 
