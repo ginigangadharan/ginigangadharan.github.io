@@ -23,10 +23,10 @@ permalink: /:title/
 
 # Plugins
 plugins: 
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-feed  
   
 authors:
   gini:
