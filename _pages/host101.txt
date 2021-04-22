@@ -1,4 +1,0 @@
-[linux-int]
-ansible-node-2 ens192={'intname':'ens192','intip':"10.154.158.146"} mydict={'Apple':10.05,'Grapes':12.50,'Orange':'No Stock'}
-
-# ansible-node-2 ens192={'intvalues':["ens192","10.154.158.146",'20','30']} ens224={'intvalues':["ens224","10.154.158.146",'20','30']}
