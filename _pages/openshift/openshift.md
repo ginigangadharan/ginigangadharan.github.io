@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenShift - Best References
+title: OpenShift - Tools, Learning Guides and References
 author: gini
 categories: [ cloud ]
 image: "assets/images/2020/how-to-create-increase-or-decrease-project-quota-in-openshift.jpg"
@@ -13,14 +13,15 @@ hidden: false
 showindex: true
 ---
 
-These are collection of reference documents and blog posts from different experts around.
+These are collection of reference documents and blog posts from experts around.
 
 - [OpenShift Tools & Terminologies](#openshift-tools--terminologies)
   - [OpenShift `odo`](#openshift-odo)
-  - [](#)
+  - [kube-burner](#kube-burner)
 - [OpenShift Articles](#openshift-articles)
-- [Azure Red Hat OpenShift (aro)](#azure-red-hat-openshift-aro)
+- [Azure Red Hat OpenShift (ARO)](#azure-red-hat-openshift-aro)
   - [Learn OpenShift](#learn-openshift)
+
 # OpenShift Tools & Terminologies
 
 ## OpenShift `odo`
@@ -32,14 +33,17 @@ These are collection of reference documents and blog posts from different expert
 - [Installing odo](https://github.com/openshift/odo)
 - [odo CLI Reference](https://docs.openshift.com/container-platform/4.6/cli_reference/developer_cli_odo/odo-cli-reference.html)
 
-## 
+## kube-burner
+Kube-burner is a tool designed to stress different OpenShift components basically by coordinating the creation and deletion of k8s resources.
+
+- [Introducing kube-burner, A tool to Burn Down Kubernetes and OpenShift](https://www.openshift.com/blog/introducing-kube-burner-a-tool-to-burn-down-kubernetes-and-openshift)
 
 
 # OpenShift Articles
 -  Read OpenShift articles in [techbeatly.com](https://www.techbeatly.com/category/cloud/openshift/)
 -  [OpenShift Community of Practice - uncontained.io](http://uncontained.io/)
 
-# Azure Red Hat OpenShift (aro)
+# Azure Red Hat OpenShift (ARO)
 
 - [Azure Red Hat OpenShift 4 Documentation](https://docs.openshift.com/aro/4/welcome/index.html)
 - [Tutorial: Create an Azure Red Hat OpenShift 4 cluster](https://docs.microsoft.com/en-us/azure/openshift/tutorial-create-cluster)
