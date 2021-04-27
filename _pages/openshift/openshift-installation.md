@@ -72,6 +72,12 @@ titleshort: OpenShift Installation
 - [Troubleshooting OpenShift Installation](#troubleshooting-openshift-installation)
 - [Installing Red Hat Advanced Cluster Management (ACM) for Kubernetes](#installing-red-hat-advanced-cluster-management-acm-for-kubernetes)
   - [Setup environment for the ACM Installation](#setup-environment-for-the-acm-installation)
+  - [Create a new OpenShift Project/Namespace for ACM](#create-a-new-openshift-projectnamespace-for-acm)
+  - [Create an image-pull secret](#create-an-image-pull-secret)
+  - [Install ACM and subscribe to the ACM Operator group](#install-acm-and-subscribe-to-the-acm-operator-group)
+  - [Install ACM and subscribe using the OpenShift web console](#install-acm-and-subscribe-using-the-openshift-web-console)
+  - [Create the MultiClusterHub resource](#create-the-multiclusterhub-resource)
+  - [Verify the ACM installation](#verify-the-acm-installation)
 - [References](#references)
 # Installing an OKD 4.x Cluster
 
@@ -735,10 +741,97 @@ https://blogs.ovirt.org/2019/01/ovirt-openshift-part-1/
 # Installing Red Hat Advanced Cluster Management (ACM) for Kubernetes
 
 ## Setup environment for the ACM Installation
+- Setup OpenShift cluster and verify
+
+```bash
+$ oc get machinesets -n openshift-machine-api
+## you need to use larger instance but for demo we will skip this part
+```
+
+## Create a new OpenShift Project/Namespace for ACM
+
+```bash
+$ oc new-project open-cluster-management
+```
+
+## Create an image-pull secret
+
+```bash
+$ oc create secret docker-registry YOUR_SECRET_NAME \
+  --docker-server=registry.access.redhat.com/rhacm1-tech-preview \
+  --docker-username=YOUR_REDHAT_USERNAME \
+  --docker-password=YOUR_REDHAT_PASSWORD
+$ oc create secret docker-registry image-pull-secret --docker-server=registry.access.redhat.com/rhacm1-tech-preview --docker-username=gineesh.madapparambath@fujitsu.com--docker-password='r@Dh#T#2019'
+```
+
+## Install ACM and subscribe to the ACM Operator group
+
+```bash
+## create OperatorGroup - acm-operator.yaml
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: acm-operator
+spec:
+  targetNamespaces:
+  - open-cluster-management
+
+## create it
+$ oc apply -f acm-operator.yaml
+
+## Create ACM Subscription - acm-subscription.yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: acm-operator-subscription
+spec:
+  sourceNamespace: openshift-marketplace
+  source: redhat-operators
+  channel: release-1.0
+  installPlanApproval: Automatic
+  name: advanced-cluster-management
+
+## create it
+$ oc apply -f acm-subscription.yaml
+```
+
+## Install ACM and subscribe using the OpenShift web console
+- Open OpenShift Web Console
+- OperatorHub -> Search `advanced cluster` -> Find `Advanced Cluster Management for Kubernetes`
+- Select Project, Version and do install
+- Wait for Operator Installation to be completed
+
+## Create the MultiClusterHub resource
+
+```bash
+## Create the MultiClusterHub from the CLI
+## create the file
+apiVersion: operators.open-cluster-management.io/v1beta1
+kind: MultiClusterHub
+metadata:
+  name: multiclusterhub
+  namespace: open-cluster-management
+spec:
+  imagePullSecret: YOUR_SECRET_NAME
+
+## create it
+$ oc apply -f multicluster-acm.yaml
+```
+
+**From Console**
+-> Select installed operator
+-> Select Advanced Cluster Management for Kubernetes
+-> Goto MultiClusterHub -> Create new   
+
+## Verify the ACM installation
+
+-> Check events in Advanced Cluster Management for Kubernetes
+-> Check Route and Access it
 
 
 **References**
 - [Installing Red Hat Advanced Cluster Management (ACM) for Kubernetes](https://developers.redhat.com/blog/2020/07/23/installing-red-hat-advanced-cluster-management-acm-for-kubernetes/)
+
 # References
 - [Installing a cluster quickly on AWS](https://docs.openshift.com/container-platform/4.6/installing/installing_aws/installing-aws-default.html)
 - [OpenShift Installer overview on GitHub](https://github.com/openshift/installer/blob/master/docs/user/overview.md)
