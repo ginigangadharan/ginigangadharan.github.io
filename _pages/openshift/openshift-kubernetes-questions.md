@@ -25,6 +25,7 @@ titleshort: OpenShift Questions
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
 - [What is SRE and DevOps ?](#what-is-sre-and-devops-)
+- [How to Enabled OpenShift Node AutoScaling ?](#how-to-enabled-openshift-node-autoscaling-)
 - [Reference](#reference)
 
 ## How to set number of pods per node in OpenShift ?
@@ -123,5 +124,9 @@ CoreOS was founded in 2013 with the mission to improve the security and reliabil
 ## What is SRE and DevOps ?
 
 - [What is SRE (site reliability engineering)? DevOps vs. SRE](https://www.redhat.com/en/topics/devops/what-is-sre)
+
+## How to Enabled OpenShift Node AutoScaling ?
+
+- [Applying autoscaling to an OpenShift Container Platform cluster](https://docs.openshift.com/container-platform/4.7/machine_management/applying-autoscaling.html)
 
 ## Reference
