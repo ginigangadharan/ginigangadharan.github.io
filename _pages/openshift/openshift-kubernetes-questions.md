@@ -18,6 +18,7 @@ titleshort: OpenShift Questions
 - [TODO/ What is ODF ?](#todo-what-is-odf-)
 - [TODO/ What is Kubernetes Admission Controller ?](#todo-what-is-kubernetes-admission-controller-)
 - [How Container Security Works ?](#how-container-security-works-)
+- [TODO/ What is Red Hat Nooba ?](#todo-what-is-red-hat-nooba-)
 - [What is Air-Gapped (disconnected) OpenShift Clusters](#what-is-air-gapped-disconnected-openshift-clusters)
 - [TODO/ What is CoreOS and Why CoreOS for OpenShift ?](#todo-what-is-coreos-and-why-coreos-for-openshift-)
 - [TODO/ What is `etcd` ?](#todo-what-is-etcd-)
@@ -90,6 +91,7 @@ worker   worker-8cecd1236b33ee3f8a5e   False     True       False
 
 - [Container Security in Six Steps](https://www.trendmicro.com/vinfo/sg/security/news/security-technology/container-security-in-six-steps)
 
+## TODO/ What is Red Hat Nooba ?
 
 ## What is Air-Gapped (disconnected) OpenShift Clusters
 
