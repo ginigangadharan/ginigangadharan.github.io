@@ -17,7 +17,9 @@ titleshort: OpenShift Questions
 - [How to set number of pods per node in OpenShift ?](#how-to-set-number-of-pods-per-node-in-openshift-)
 - [What is a Distributed System ?](#what-is-a-distributed-system-)
 - [TODO/ What is ODF ?](#todo-what-is-odf-)
+- [TODO/ What is ServiceMesh ?](#todo-what-is-servicemesh-)
 - [What is Kiali ?](#what-is-kiali-)
+- [What is Jeager ?](#what-is-jeager-)
 - [TODO/ What is Kubernetes Admission Controller ?](#todo-what-is-kubernetes-admission-controller-)
 - [How Container Security Works ?](#how-container-security-works-)
 - [TODO/ What is Red Hat Nooba ?](#todo-what-is-red-hat-nooba-)
@@ -48,13 +50,26 @@ Read more : [A Thorough Introduction to Distributed Systems](https://www.freecod
 
 - Fault Tolerance / High Availability
 - Low Latency 
+
 ## TODO/ What is ODF ?
+
+## TODO/ What is ServiceMesh ?
+
+
+- [Installing Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html)
+
 
 ## What is Kiali ?
 
 Kiali is a management console for an Istio-based service mesh. It provides dashboards, observability, and lets you operate your mesh with robust configuration and validation capabilities. It shows the structure of your service mesh by inferring traffic topology and displays the health of your mesh.
 
-- [Website](https://kiali.io/)
+- [Website](https://kiali.io/) / [GitHub](https://github.com/jaegertracing/jaeger)
+
+## What is Jeager ?
+
+Distributed Tracing System - Monitor and troubleshoot transactions in complex distributed systems
+
+- [website][https://www.jaegertracing.io]
 
 ## TODO/ What is Kubernetes Admission Controller ?
 - `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook`
