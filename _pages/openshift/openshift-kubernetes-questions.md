@@ -35,7 +35,9 @@ titleshort: OpenShift Questions
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
 - [What is SRE and DevOps ?](#what-is-sre-and-devops-)
-- [How to Enabled OpenShift Node AutoScaling ?](#how-to-enabled-openshift-node-autoscaling-)
+- [TODO/ How to Enabled OpenShift Node AutoScaling ?](#todo-how-to-enabled-openshift-node-autoscaling-)
+- [What is KeyStone ?](#what-is-keystone-)
+- [Removing the kubeadmin user](#removing-the-kubeadmin-user)
 - [Reference](#reference)
 
 ## How to set number of pods per node in OpenShift ?
@@ -163,7 +165,7 @@ Operator have 2 components;
 - [Building Kubernetes Operators with the Operator Framework and Ansible](https://www.youtube.com/watch?v=5XZZxhwb_xs) 
 ## What is Operator Framework ?
 
-5 Levels of Operator Framework
+**5 Levels of Operator Framework**
 
 1. Basic Install
 2. Seamless Upgrade
@@ -171,7 +173,7 @@ Operator have 2 components;
 4. Deep Insight
 5. Auto Pilot
 
-Operator Components
+**Operator Components**
 
 - Operator SDK - Provides tooling to build and package operators
 - Operator Lifecyle Management (OLM) - Governs operator scope and lifecycle
@@ -194,8 +196,31 @@ Operator Components
 
 - [What is SRE (site reliability engineering)? DevOps vs. SRE](https://www.redhat.com/en/topics/devops/what-is-sre)
 
-## How to Enabled OpenShift Node AutoScaling ?
+## TODO/ How to Enabled OpenShift Node AutoScaling ?
 
 - [Applying autoscaling to an OpenShift Container Platform cluster](https://docs.openshift.com/container-platform/4.7/machine_management/applying-autoscaling.html)
+
+
+## What is KeyStone ?
+
+Keystone is an OpenStack project that provides identity, token, catalog, and policy services. You can configure the integration with Keystone so that the new OpenShift Container Platform users are based on either the Keystone user names or unique Keystone IDs. 
+
+- [What is keystone federation?](https://docs.openstack.org/keystone/latest/admin/federation/introduction.html)
+## Removing the kubeadmin user
+
+After you define an identity provider and create a new `cluster-admin` user, you can remove the `kubeadmin` to improve cluster security.
+
+**Warning: ** If you follow this procedure before another user is a cluster-admin, then OpenShift Container Platform must be reinstalled. It is not possible to undo this command.
+
+**Prerequisites**
+
+- You must have configured at least one identity provider.
+- You must have added the cluster-admin role to a user.
+- You must be logged in as an administrator.
+
+```bash
+-- Remove the kubeadmin secrets:
+$ oc delete secrets kubeadmin -n kube-system
+```
 
 ## Reference
