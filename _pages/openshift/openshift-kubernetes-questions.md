@@ -24,7 +24,7 @@ titleshort: OpenShift Questions
 - [How Container Security Works ?](#how-container-security-works-)
 - [TODO/ What is Red Hat Nooba ?](#todo-what-is-red-hat-nooba-)
 - [What is Air-Gapped (disconnected) OpenShift Clusters](#what-is-air-gapped-disconnected-openshift-clusters)
-- [What is Clair ?](#what-is-clair-)
+- [What is new in Red Hat OpenShift 4 ?](#what-is-new-in-red-hat-openshift-4-)
 - [What is Quay ?](#what-is-quay-)
 - [TODO/ What is CoreOS and Why using CoreOS for OpenShift ?](#todo-what-is-coreos-and-why-using-coreos-for-openshift-)
 - [What is CRI-O ?](#what-is-cri-o-)
@@ -57,7 +57,10 @@ Read more : [A Thorough Introduction to Distributed Systems](https://www.freecod
 
 
 - [Installing Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html)
-
+  - Install Elastic Operator
+  - Install Jeager Operator
+  - Install Kiali Operator
+  - Install Red Hat OpenShift Service Mesh (OSSM) Operator
 
 ## What is Kiali ?
 
@@ -95,7 +98,18 @@ Air-gapped environments are those that are physically isolated from other networ
 - [Is your Operator Air-Gap Friendly?](https://www.openshift.com/blog/is-your-operator-air-gap-friendly)
 - OpenShift 4 in an Air Gap (disconnected) environment- [Part1]](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-1-prerequisites-63f065e8a729), [Part2](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-2-installation-1dd8bf085fdd)
 
-## What is Clair ?
+## What is new in Red Hat OpenShift 4 ?
+
+- Immutable Red Hat Enterprise Linux CoreOS
+- Fullstack Automation
+- OpenShift service mesh
+- Operator framework
+- Knative framework
+- Managing Multiple Clusters Across Multiple Clouds
+
+Read : [Introducing Red Hat OpenShift 4: Kubernetes for the Enterprise](https://www.openshift.com/blog/introducing-red-hat-openshift-4#:~:)
+
+- ## What is Clair ?
 
 Clair is an open source project for the static analysis of vulnerabilities in application containers (currently including OCI and docker).
 
