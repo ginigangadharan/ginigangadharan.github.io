@@ -193,7 +193,14 @@ Operator have 2 components;
 
 Red Hat® Advanced Cluster Security for Kubernetes, powered by StackRox technology, protects your vital applications across build, deploy, and runtime.
 
+- Control the trusted sources of content
+- Defend applications from attachs and vulnerabilities
+- Extend secure services through standard interface and API's
+
+Also Read;
 - [Red Hat Advanced Cluster Security for Kubernetes](https://www.redhat.com/en/resources/advanced-cluster-security-for-kubernetes-datasheet)
+- [Red Hat OpenShift container security](https://www.openshift.com/learn/topics/security/)
+- [OpenShift Security Best Practices for Kubernetes Cluster Design](https://www.openshift.com/blog/openshift-security-best-practices-for-kubernetes-cluster-design)
 
 ## What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?
 
