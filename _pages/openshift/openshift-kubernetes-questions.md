@@ -30,6 +30,7 @@ titleshort: OpenShift Questions
 - [What is CRI-O ?](#what-is-cri-o-)
 - [TODO/ What is `etcd` ?](#todo-what-is-etcd-)
 - [TODO/ What is Kubernetes Operator (or OpenShift Operator) ?](#todo-what-is-kubernetes-operator-or-openshift-operator-)
+- [What is Operator Framework ?](#what-is-operator-framework-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
@@ -155,9 +156,28 @@ Operator have 2 components;
   1. CRD - Custom Resource Definition
   2. Controller - which controls the application deployment.
 
+- Use Helm/Ansible/Go
 - `OLM` stands for Operator Lifecyle Management
 - [What is an Operator - OpenShift.com](https://www.openshift.com/learn/topics/operators)
 - [Troubleshooting OpenShift Operator issues](https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html)
+- :tv: [Building Kubernetes Operators with the Operator Framework and Ansible](https://www.youtube.com/watch?v=5XZZxhwb_xs) 
+## What is Operator Framework ?
+
+5 Levels of Operator Framework
+
+1. Basic Install
+2. Seamless Upgrade
+3. Full Lifecycle
+4. Deep Insight
+5. Auto Pilot
+
+Operator Components
+
+- Operator SDK - Provides tooling to build and package operators
+- Operator Lifecyle Management (OLM) - Governs operator scope and lifecycle
+- Metering - historical information to be gathered and reported on
+- OperatorHub - marketplace for community operators
+
 
 ## TODO/ What is Helm ?
 
