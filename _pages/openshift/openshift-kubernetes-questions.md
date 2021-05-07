@@ -33,6 +33,7 @@ titleshort: OpenShift Questions
 - [TODO/ What is Kubernetes Operator (or OpenShift Operator) ?](#todo-what-is-kubernetes-operator-or-openshift-operator-)
 - [What is Operator Framework ?](#what-is-operator-framework-)
 - [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
+- [What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?](#what-are-the-components-of-openshift-cluster-monitoring-logging-and-telemetry-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
@@ -193,6 +194,19 @@ Operator have 2 components;
 Red Hat® Advanced Cluster Security for Kubernetes, powered by StackRox technology, protects your vital applications across build, deploy, and runtime.
 
 - [Red Hat Advanced Cluster Security for Kubernetes](https://www.redhat.com/en/resources/advanced-cluster-security-for-kubernetes-datasheet)
+
+## What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?
+
+- **collection** - This is the component that collects logs from the cluster, formats them, and forwards them to the log store. The current implementation is **Fluentd**.
+- **log store** - This is where the logs are stored. The default implementation is **Elasticsearch**. You can use the default Elasticsearch log store or forward logs to external log stores. The default log store is optimized and tested for short-term storage.
+- **visualization** - This is the UI component you can use to view logs, graphs, charts, and so forth. The current implementation is **Kibana**.
+
+**Telemetry** 
+
+Sends a carefully chosen subset of the cluster monitoring metrics to Red Hat. 
+
+- [openshift/telemeter](https://github.com/openshift/telemeter)
+
 
 ## TODO/ What is Helm ?
 
