@@ -17,6 +17,7 @@ titleshort: OpenShift Questions
 - [How to set number of pods per node in OpenShift ?](#how-to-set-number-of-pods-per-node-in-openshift-)
 - [What is a Distributed System ?](#what-is-a-distributed-system-)
 - [TODO/ What is ODF ?](#todo-what-is-odf-)
+- [What is Kiali ?](#what-is-kiali-)
 - [TODO/ What is Kubernetes Admission Controller ?](#todo-what-is-kubernetes-admission-controller-)
 - [How Container Security Works ?](#how-container-security-works-)
 - [TODO/ What is Red Hat Nooba ?](#todo-what-is-red-hat-nooba-)
@@ -48,6 +49,12 @@ Read more : [A Thorough Introduction to Distributed Systems](https://www.freecod
 - Fault Tolerance / High Availability
 - Low Latency 
 ## TODO/ What is ODF ?
+
+## What is Kiali ?
+
+Kiali is a management console for an Istio-based service mesh. It provides dashboards, observability, and lets you operate your mesh with robust configuration and validation capabilities. It shows the structure of your service mesh by inferring traffic topology and displays the health of your mesh.
+
+- [Website](https://kiali.io/)
 
 ## TODO/ What is Kubernetes Admission Controller ?
 - `MutatingAdmissionWebhook` and `ValidatingAdmissionWebhook`
