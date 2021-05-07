@@ -29,8 +29,10 @@ titleshort: OpenShift Questions
 - [TODO/ What is CoreOS and Why using CoreOS for OpenShift ?](#todo-what-is-coreos-and-why-using-coreos-for-openshift-)
 - [What is CRI-O ?](#what-is-cri-o-)
 - [TODO/ What is `etcd` ?](#todo-what-is-etcd-)
+- [What is Compliance Operator ?](#what-is-compliance-operator-)
 - [TODO/ What is Kubernetes Operator (or OpenShift Operator) ?](#todo-what-is-kubernetes-operator-or-openshift-operator-)
 - [What is Operator Framework ?](#what-is-operator-framework-)
+- [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
@@ -151,6 +153,11 @@ CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) t
 
 `etcd` is a distributed key-value store.
 
+## What is Compliance Operator ?
+
+The Compliance Operator lets OpenShift Container Platform administrators describe the desired compliance state of a cluster and provides them with an overview of gaps and ways to remediate them. 
+
+- [Understanding the Compliance Operator](https://docs.openshift.com/container-platform/4.7/security/compliance_operator/compliance-operator-understanding.html)
 ## TODO/ What is Kubernetes Operator (or OpenShift Operator) ?
 
 Use the Kubernetes API to create, configure, and automatically manage applications.
@@ -180,6 +187,12 @@ Operator have 2 components;
 - Metering - historical information to be gathered and reported on
 - OperatorHub - marketplace for community operators
 
+
+## What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?
+
+Red Hat® Advanced Cluster Security for Kubernetes, powered by StackRox technology, protects your vital applications across build, deploy, and runtime.
+
+- [Red Hat Advanced Cluster Security for Kubernetes](https://www.redhat.com/en/resources/advanced-cluster-security-for-kubernetes-datasheet)
 
 ## TODO/ What is Helm ?
 
