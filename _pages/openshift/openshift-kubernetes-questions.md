@@ -21,6 +21,8 @@ titleshort: OpenShift Questions
 - [How Container Security Works ?](#how-container-security-works-)
 - [TODO/ What is Red Hat Nooba ?](#todo-what-is-red-hat-nooba-)
 - [What is Air-Gapped (disconnected) OpenShift Clusters](#what-is-air-gapped-disconnected-openshift-clusters)
+- [What is Clair ?](#what-is-clair-)
+- [What is Quay ?](#what-is-quay-)
 - [TODO/ What is CoreOS and Why using CoreOS for OpenShift ?](#todo-what-is-coreos-and-why-using-coreos-for-openshift-)
 - [What is CRI-O ?](#what-is-cri-o-)
 - [TODO/ What is `etcd` ?](#todo-what-is-etcd-)
@@ -110,6 +112,18 @@ Air-gapped environments are those that are physically isolated from other networ
 - [Is your Operator Air-Gap Friendly?](https://www.openshift.com/blog/is-your-operator-air-gap-friendly)
 - OpenShift 4 in an Air Gap (disconnected) environment- [Part1]](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-1-prerequisites-63f065e8a729), [Part2](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-2-installation-1dd8bf085fdd)
 
+## What is Clair ?
+
+Clair is an open source project for the static analysis of vulnerabilities in application containers (currently including OCI and docker).
+
+- [Clair GitHub](https://github.com/quay/clair)
+
+## What is Quay ?
+
+Quay is a container image registry that enables you to build, organize, distribute, and deploy containers. This is the Community Distribution of Quay that powers Red Hat Quay and Quay.io
+
+- [ProjectQuay][https://www.projectquay.io/]
+  
 ## TODO/ What is CoreOS and Why using CoreOS for OpenShift ?
 
 CoreOS was founded in 2013 with the mission to improve the security and reliability of the internet. *On May 26, 2020, CoreOS Container Linux reached its end of life and will no longer receive updates.*
