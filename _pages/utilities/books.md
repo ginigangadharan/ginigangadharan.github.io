@@ -19,6 +19,7 @@ titleshort: books
 
 ## Containers, Kubernetes, OpenShift
 - [Cloud Native DevOps With Kubernetes](https://www.nginx.com/resources/library/cloud-native-devops-with-kubernetes/) - **FREE**
+- [Kubernetes Operators](https://www.redhat.com/cms/managed-files/cl-oreilly-kubernetes-operators-ebook-f21452-202001-en_2.pdf) - **FREE**
 ## Terraform
 - [Infrastructure as Code](https://www.nginx.com/resources/library/infrastructure-as-code/) - **FREE**
 - [Terraform: Up & Running](https://www.terraformupandrunning.com/)

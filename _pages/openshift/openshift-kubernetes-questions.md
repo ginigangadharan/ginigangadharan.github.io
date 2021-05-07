@@ -151,6 +151,7 @@ CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) t
 
 Use the Kubernetes API to create, configure, and automatically manage applications.
 
+- [What is an Operator - OpenShift.com](https://www.openshift.com/learn/topics/operators)
 - [Troubleshooting OpenShift Operator issues](https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html)
 
 ## TODO/ OpenShift Logging
