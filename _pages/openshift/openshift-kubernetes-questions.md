@@ -160,7 +160,7 @@ Operator have 2 components;
 - `OLM` stands for Operator Lifecyle Management
 - [What is an Operator - OpenShift.com](https://www.openshift.com/learn/topics/operators)
 - [Troubleshooting OpenShift Operator issues](https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html)
-- :tv: [Building Kubernetes Operators with the Operator Framework and Ansible](https://www.youtube.com/watch?v=5XZZxhwb_xs) 
+- [Building Kubernetes Operators with the Operator Framework and Ansible](https://www.youtube.com/watch?v=5XZZxhwb_xs) 
 ## What is Operator Framework ?
 
 5 Levels of Operator Framework
