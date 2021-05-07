@@ -1,34 +1,40 @@
 ---
 layout: post
-title: Ansible - Frequently Asked Questions
-categories: [ ansible ]
-tags: [ansible]
+title: Ansible - Questions and References
+author: gini
+categories: [ Ansible, kubernetes ]
+tags: [ OpenShift, kubernetes ]
+image: "assets/images/2020/how-to-create-increase-or-decrease-project-quota-in-openshift.jpg"
 show-avatar: false
-permalink: ansible-faq
+permalink: ansible-questions
 featured: false
 hidden: false
-titleshort: Ansible FAQ
+titleshort: Ansible Questions
 ---
+
+*Note: These are questions I have received via chat groups and communities. This is a living document and I will update the page whenever there is a new question or better answer or references.*
+
 - [What is Ansible](#what-is-ansible)
 - [What is Ansible Tower](#what-is-ansible-tower)
 - [Why Ansible is different than other automation tools](#why-ansible-is-different-than-other-automation-tools)
 - [Can I use Ansible for Auto Remediation ?](#can-i-use-ansible-for-auto-remediation-)
 
-### What is Ansible  
+
+## What is Ansible  
 
 **Ansible** is an open source automation tool with simple automation language (YAML)
 
-### What is Ansible Tower
+## What is Ansible Tower
 
 Ansible Tower is an enterprise framework for controlling, securing and managing your Ansible Automation with UI and RESTful API
 
-### Why Ansible is different than other automation tools
+## Why Ansible is different than other automation tools
 
 There are other automation tools like Puppet, Chef, Saltstack etc but they all need a agent to be run on managed nodes. Ansible is agent-less; as long as Ansible node have access to managed node via SSH, API etc, Ansible can manage that node.
 
 [Reference](https://www.whizlabs.com/blog/chef-vs-puppet-vs-ansible/)
 
-### Can I use Ansible for Auto Remediation ?
+## Can I use Ansible for Auto Remediation ?
 
 Yes, you can use Ansible for auto-remediation; but keep in mind that someone has to trigger the Ansible job either manually or via some integrated example. 
 
@@ -38,4 +44,3 @@ Eg:
 - Step 2: Monitoring tool will create a ticket (ServiceNow, Jira, Slack etc)
 - Step 3: Monitoring tool will trigger a call to Ansible Job (custmized ) to remediate.
 - Step 4: Ansible will run the job on target node and return result to Monitoring/Ticketing Tool.
-
