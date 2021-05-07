@@ -153,9 +153,9 @@ CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) t
 Use the Kubernetes API to create, configure, and automatically manage applications.
 Operator have 2 components;
   1. CRD - Custom Resource Definition
-  2. Controller - 
+  2. Controller - which controls the application deployment.
 
-- OLM stands for Operator Lifecyle Management
+- `OLM` stands for Operator Lifecyle Management
 - [What is an Operator - OpenShift.com](https://www.openshift.com/learn/topics/operators)
 - [Troubleshooting OpenShift Operator issues](https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html)
 
