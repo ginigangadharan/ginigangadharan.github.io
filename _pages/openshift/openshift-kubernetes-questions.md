@@ -35,6 +35,7 @@ titleshort: OpenShift Questions
 - [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
 - [What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?](#what-are-the-components-of-openshift-cluster-monitoring-logging-and-telemetry-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
+- [What are the points to note while architecting OpenShift Clusters ?](#what-are-the-points-to-note-while-architecting-openshift-clusters-)
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
 - [What is SRE and DevOps ?](#what-is-sre-and-devops-)
@@ -217,6 +218,9 @@ Sends a carefully chosen subset of the cluster monitoring metrics to Red Hat.
 
 ## TODO/ What is Helm ?
 
+## What are the points to note while architecting OpenShift Clusters ? 
+
+- [Enterprise OpenShift Deployment: What do you need to know?](https://www.openshift.com/blog/enterprise-openshift-deployment)
 
 ## TODO/ OpenShift Logging
 
