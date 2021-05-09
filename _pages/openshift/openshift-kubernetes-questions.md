@@ -34,6 +34,7 @@ titleshort: OpenShift Questions
 - [What is Operator Framework ?](#what-is-operator-framework-)
 - [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
 - [What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?](#what-are-the-components-of-openshift-cluster-monitoring-logging-and-telemetry-)
+- [What is `cadvisor` in kubernetes ?](#what-is-cadvisor-in-kubernetes-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [What are the points to note while architecting OpenShift Clusters ?](#what-are-the-points-to-note-while-architecting-openshift-clusters-)
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
@@ -215,6 +216,13 @@ Sends a carefully chosen subset of the cluster monitoring metrics to Red Hat.
 
 - [openshift/telemeter](https://github.com/openshift/telemeter)
 
+## What is `cadvisor` in kubernetes ?
+
+cAdvisor is an open-source agent integrated into the kubelet binary that monitors resource usage and analyzes the performance of containers. It collects statistics about the CPU, memory, file, and network usage for all containers running on a given node (it does not operate at the pod level)
+
+- [Tools for Monitoring Resources](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
+- [Native Kubernetes Monitoring, Part 1: Monitoring and Metrics for Users](https://rancher.com/blog/2019/native-kubernetes-monitoring-tools-part-1)
+- [MONITORING DOCKER CONTAINER METRICS USING CADVISOR](https://prometheus.io/docs/guides/cadvisor/)
 
 ## TODO/ What is Helm ?
 
