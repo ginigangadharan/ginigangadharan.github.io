@@ -22,6 +22,7 @@ titleshort: OpenShift Questions
 - [What is Jeager ?](#what-is-jeager-)
 - [TODO/ What is Kubernetes Admission Controller ?](#todo-what-is-kubernetes-admission-controller-)
 - [How Container Security Works ?](#how-container-security-works-)
+- [What is `--pod-eviction-timeout` in Kubernetes ?](#what-is---pod-eviction-timeout-in-kubernetes-)
 - [TODO/ What is Red Hat Nooba ?](#todo-what-is-red-hat-nooba-)
 - [What is Air-Gapped (disconnected) OpenShift Clusters](#what-is-air-gapped-disconnected-openshift-clusters)
 - [What is new in Red Hat OpenShift 4 ?](#what-is-new-in-red-hat-openshift-4-)
@@ -35,6 +36,7 @@ titleshort: OpenShift Questions
 - [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
 - [What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?](#what-are-the-components-of-openshift-cluster-monitoring-logging-and-telemetry-)
 - [What is `cadvisor` in kubernetes ?](#what-is-cadvisor-in-kubernetes-)
+- [TODO/ What is `cgroup` ?](#todo-what-is-cgroup-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [What are the points to note while architecting OpenShift Clusters ?](#what-are-the-points-to-note-while-architecting-openshift-clusters-)
 - [TODO/ OpenShift Logging](#todo-openshift-logging)
@@ -97,6 +99,10 @@ Distributed Tracing System - Monitor and troubleshoot transactions in complex di
 -  Secure your application
 
 - [Container Security in Six Steps](https://www.trendmicro.com/vinfo/sg/security/news/security-technology/container-security-in-six-steps)
+
+## What is `--pod-eviction-timeout` in Kubernetes ?
+
+**The grace period for deleting pods on failed nodes.** - The default eviction timeout duration is five minutes. In some cases when the node is unreachable, the API server is unable to communicate with the kubelet on the node. The decision to delete the pods cannot be communicated to the kubelet until communication with the API server is re-established.
 
 ## TODO/ What is Red Hat Nooba ?
 
@@ -223,6 +229,9 @@ cAdvisor is an open-source agent integrated into the kubelet binary that monitor
 - [Tools for Monitoring Resources](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
 - [Native Kubernetes Monitoring, Part 1: Monitoring and Metrics for Users](https://rancher.com/blog/2019/native-kubernetes-monitoring-tools-part-1)
 - [MONITORING DOCKER CONTAINER METRICS USING CADVISOR](https://prometheus.io/docs/guides/cadvisor/)
+
+## TODO/ What is `cgroup` ?
+
 
 ## TODO/ What is Helm ?
 
