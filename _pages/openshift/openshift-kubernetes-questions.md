@@ -156,6 +156,10 @@ LIGHTWEIGHT CONTAINER RUNTIME FOR KUBERNETES
 
 CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) to enable using OCI (Open Container Initiative) compatible runtimes. It is a lightweight alternative to using Docker as the runtime for kubernetes. It allows Kubernetes to use any OCI-compliant runtime as the container runtime for running pods. 
 
+- `cri` - container runtime interface came in picture as new container engines supports included in kubernetes.
+- `cni` - container network interface is for networking support
+- `csi` - container storage interface is to support storage drivers and solutions
+
 - [Website](https://cri-o.io/)
 - 
 ## TODO/ What is `etcd` ?
