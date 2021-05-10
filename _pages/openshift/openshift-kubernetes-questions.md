@@ -14,6 +14,7 @@ titleshort: OpenShift Questions
 
 *Note: These are questions I have received via chat groups and communities. This is a living document and I will update the page whenever there is a new question or better answer or references.*
 
+- [What are the features of OpenShift ?](#what-are-the-features-of-openshift-)
 - [How to set number of pods per node in OpenShift ?](#how-to-set-number-of-pods-per-node-in-openshift-)
 - [What is a Distributed System ?](#what-is-a-distributed-system-)
 - [TODO/ What is ODF ?](#todo-what-is-odf-)
@@ -46,6 +47,18 @@ titleshort: OpenShift Questions
 - [What is KeyStone ?](#what-is-keystone-)
 - [Removing the kubeadmin user](#removing-the-kubeadmin-user)
 - [Reference](#reference)
+
+## What are the features of OpenShift ?
+
+- High Availabilty
+- Lightweight Operating System
+- Load Balancing
+- Automated Scaling
+- Logging and Monitoring (based on prometheus, ElasticSearch)
+- Service Discovery
+- Storage
+- Application Management
+- Cluster Extensibility
 
 ## How to set number of pods per node in OpenShift ?
 
@@ -171,6 +184,9 @@ CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) t
 The Compliance Operator lets OpenShift Container Platform administrators describe the desired compliance state of a cluster and provides them with an overview of gaps and ways to remediate them. 
 
 - [Understanding the Compliance Operator](https://docs.openshift.com/container-platform/4.7/security/compliance_operator/compliance-operator-understanding.html)
+- How does Compliance Operator work for OpenShift? [Part 1](https://www.openshift.com/blog/how-does-compliance-operator-work-for-openshift-part-1), [Part 2](https://www.openshift.com/blog/how-does-compliance-operator-work-for-openshift-part-2)
+- [Compliance Operartor - GitHub](https://github.com/openshift/compliance-operator)
+- [Understanding the Compliance Operator](https://docs.openshift.com/container-platform/4.6/security/compliance_operator/compliance-operator-understanding.html)
 ## TODO/ What is Kubernetes Operator (or OpenShift Operator) ?
 
 Use the Kubernetes API to create, configure, and automatically manage applications.
