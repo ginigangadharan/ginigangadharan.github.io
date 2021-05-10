@@ -31,7 +31,7 @@ titleshort: OpenShift Questions
 - [TODO/ What is CoreOS and Why using CoreOS for OpenShift ?](#todo-what-is-coreos-and-why-using-coreos-for-openshift-)
 - [What is CRI-O ?](#what-is-cri-o-)
 - [TODO/ What is `etcd` ?](#todo-what-is-etcd-)
-- [What is Compliance Operator ?](#what-is-compliance-operator-)
+- [OpenShift Hardering - What is Compliance Operator ?](#openshift-hardering---what-is-compliance-operator-)
 - [TODO/ What is Kubernetes Operator (or OpenShift Operator) ?](#todo-what-is-kubernetes-operator-or-openshift-operator-)
 - [What is Operator Framework ?](#what-is-operator-framework-)
 - [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
@@ -179,7 +179,7 @@ CRI-O is an implementation of the Kubernetes CRI (Container Runtime Interface) t
 
 `etcd` is a distributed key-value store.
 
-## What is Compliance Operator ?
+## OpenShift Hardering - What is Compliance Operator ?
 
 The Compliance Operator lets OpenShift Container Platform administrators describe the desired compliance state of a cluster and provides them with an overview of gaps and ways to remediate them. 
 
