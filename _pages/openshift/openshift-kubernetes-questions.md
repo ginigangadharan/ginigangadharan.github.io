@@ -187,6 +187,8 @@ The Compliance Operator lets OpenShift Container Platform administrators describ
 - How does Compliance Operator work for OpenShift? [Part 1](https://www.openshift.com/blog/how-does-compliance-operator-work-for-openshift-part-1), [Part 2](https://www.openshift.com/blog/how-does-compliance-operator-work-for-openshift-part-2)
 - [Compliance Operartor - GitHub](https://github.com/openshift/compliance-operator)
 - [Understanding the Compliance Operator](https://docs.openshift.com/container-platform/4.6/security/compliance_operator/compliance-operator-understanding.html)
+- Also read - [kube-bench](https://github.com/aquasecurity/kube-bench) is a Go application that checks whether Kubernetes is deployed securely by running the checks documented in the [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/).
+
 ## TODO/ What is Kubernetes Operator (or OpenShift Operator) ?
 
 Use the Kubernetes API to create, configure, and automatically manage applications.

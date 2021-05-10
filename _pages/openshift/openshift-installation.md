@@ -721,8 +721,9 @@ https://console-openshift-console.apps.cluster-d0ce.d0ce.sandbox1072.opentlc.com
 
 # OpenShift Installation on  Red Hat Virtualization (RHV)/oVirt
 
-https://blogs.ovirt.org/2019/01/ovirt-openshift-part-1/
+***Refer same steaps in VMWare Setup***
 
+- [Reference](https://blogs.ovirt.org/2019/01/ovirt-openshift-part-1/)
 - [Installing a cluster quickly on RHV](https://docs.openshift.com/container-platform/4.5/installing/installing_rhv/installing-rhv-default.html)
 - [Installing a cluster on RHV with customizations](https://docs.openshift.com/container-platform/4.7/installing/installing_rhv/installing-rhv-customizations.html)
 - [Support Matrix for OpenShift Container Platform IPI Installation on Red Hat Virtualization](https://access.redhat.com/articles/5485861)
