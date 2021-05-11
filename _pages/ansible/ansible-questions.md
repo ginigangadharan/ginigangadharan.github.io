@@ -18,6 +18,7 @@ titleshort: Ansible Questions
 - [What is Ansible Tower](#what-is-ansible-tower)
 - [Why Ansible is different than other automation tools](#why-ansible-is-different-than-other-automation-tools)
 - [Can I use Ansible for Auto Remediation ?](#can-i-use-ansible-for-auto-remediation-)
+- [What is Instance Groups and Isolated Nodes in Ansibe Tower ?](#what-is-instance-groups-and-isolated-nodes-in-ansibe-tower-)
 
 
 ## What is Ansible  
@@ -44,3 +45,11 @@ Eg:
 - Step 2: Monitoring tool will create a ticket (ServiceNow, Jira, Slack etc)
 - Step 3: Monitoring tool will trigger a call to Ansible Job (custmized ) to remediate.
 - Step 4: Ansible will run the job on target node and return result to Monitoring/Ticketing Tool.
+
+## What is Instance Groups and Isolated Nodes in Ansibe Tower ?
+
+An Ansible Tower **Instance group** is a set of cluster nodes dedicated for a particular purpose. You can organize your Ansible Tower Cluster into any number of instance groups, and cluster nodes can exist in multiple instance groups. Each instance group has its own job queue, and any node in the group can take jobs off of that queue.
+
+An **Isolated Node** is an Ansible Tower node that contains a small piece of software for running playbooks locally to manage a set of infrastructure. It can be deployed behind a firewall/VPC or in a remote datacenter, with only SSH access available. 
+
+- [Instance Groups and Isolated Nodes - Ansible Blog](https://www.ansible.com/blog/ansible-tower-feature-spotlight-instance-groups-and-isolated-nodes)

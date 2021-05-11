@@ -46,6 +46,8 @@ titleshort: OpenShift Questions
 - [TODO/ How to Enabled OpenShift Node AutoScaling ?](#todo-how-to-enabled-openshift-node-autoscaling-)
 - [What is KeyStone ?](#what-is-keystone-)
 - [Removing the kubeadmin user](#removing-the-kubeadmin-user)
+- [What is blue green deployment?](#what-is-blue-green-deployment)
+- [How to Size an OpenShift Cluster ?](#how-to-size-an-openshift-cluster-)
 - [Reference](#reference)
 
 ## What are the features of OpenShift ?
@@ -300,4 +302,13 @@ After you define an identity provider and create a new `cluster-admin` user, you
 $ oc delete secrets kubeadmin -n kube-system
 ```
 
+## What is blue green deployment?
+
+Blue green deployment is an application release model that gradually transfers user traffic from a previous version of an app or microservice to a nearly identical new release—both of which are running in production. 
+
+- [What is blue green deployment?](https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment)
+
+## How to Size an OpenShift Cluster ?
+
+- [OpenShift sizing and subscription guide for enterprise Kubernetes](https://www.redhat.com/en/resources/OpenShift-subscription-sizing-guide-detail)
 ## Reference
