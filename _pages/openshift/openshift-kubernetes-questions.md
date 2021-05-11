@@ -40,7 +40,6 @@ titleshort: OpenShift Questions
 - [TODO/ What is `cgroup` ?](#todo-what-is-cgroup-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [What are the points to note while architecting OpenShift Clusters ?](#what-are-the-points-to-note-while-architecting-openshift-clusters-)
-- [TODO/ OpenShift Logging](#todo-openshift-logging)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
 - [What is SRE and DevOps ?](#what-is-sre-and-devops-)
 - [TODO/ How to Enabled OpenShift Node AutoScaling ?](#todo-how-to-enabled-openshift-node-autoscaling-)
@@ -128,7 +127,7 @@ Distributed Tracing System - Monitor and troubleshoot transactions in complex di
 Air-gapped environments are those that are physically isolated from other networks, but most importantly isolated from the Internet. No proxies, no jump hosts - nothing. 
 
 - [Is your Operator Air-Gap Friendly?](https://www.openshift.com/blog/is-your-operator-air-gap-friendly)
-- OpenShift 4 in an Air Gap (disconnected) environment- [Part1]](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-1-prerequisites-63f065e8a729), [Part2](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-2-installation-1dd8bf085fdd)
+- OpenShift 4 in an Air Gap (disconnected) environment- [Part1](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-1-prerequisites-63f065e8a729), [Part2](https://two-oes.medium.com/openshift-4-in-an-air-gap-disconnected-environment-part-2-installation-1dd8bf085fdd)
 
 ## What is new in Red Hat OpenShift 4 ?
 
@@ -242,6 +241,8 @@ Also Read;
 - **log store** - This is where the logs are stored. The default implementation is **Elasticsearch**. You can use the default Elasticsearch log store or forward logs to external log stores. The default log store is optimized and tested for short-term storage.
 - **visualization** - This is the UI component you can use to view logs, graphs, charts, and so forth. The current implementation is **Kibana**.
 
+- [Installing OpenShift Logging](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging-deploying.html)
+
 **Telemetry** 
 
 Sends a carefully chosen subset of the cluster monitoring metrics to Red Hat. 
@@ -264,10 +265,6 @@ cAdvisor is an open-source agent integrated into the kubelet binary that monitor
 ## What are the points to note while architecting OpenShift Clusters ? 
 
 - [Enterprise OpenShift Deployment: What do you need to know?](https://www.openshift.com/blog/enterprise-openshift-deployment)
-
-## TODO/ OpenShift Logging
-
-- [Installing OpenShift Logging](https://docs.openshift.com/container-platform/4.7/logging/cluster-logging-deploying.html)
 
 ## How to Manage Roles and Permissons in OpenShift ?
 
