@@ -46,6 +46,8 @@ titleshort: OpenShift Questions
 - [TODO/ How to Enabled OpenShift Node AutoScaling ?](#todo-how-to-enabled-openshift-node-autoscaling-)
 - [What is KeyStone ?](#what-is-keystone-)
 - [Removing the kubeadmin user](#removing-the-kubeadmin-user)
+- [What is cgroup ? (CONTROL GROUPS)](#what-is-cgroup--control-groups)
+- [What is Multus Container Network Interface (CNI) ?](#what-is-multus-container-network-interface-cni-)
 - [What is blue green deployment?](#what-is-blue-green-deployment)
 - [How to Size an OpenShift Cluster ?](#how-to-size-an-openshift-cluster-)
 - [Reference](#reference)
@@ -302,6 +304,21 @@ After you define an identity provider and create a new `cluster-admin` user, you
 $ oc delete secrets kubeadmin -n kube-system
 ```
 
+## What is cgroup ? (CONTROL GROUPS)
+
+`cgroups` is a Linux kernel feature that limits, accounts for, and isolates the resource usage of a collection of processes.
+
+- [Understanding resource limits in kubernetes: memory](https://medium.com/@betz.mark/understanding-resource-limits-in-kubernetes-memory-6b41e9a955f9)
+- [NTRODUCTION TO CONTROL GROUPS (CGROUPS)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/ch01)
+- [Linux Control Groups and Process Isolation](https://www.linuxjournal.com/content/everything-you-need-know-about-linux-containers-part-i-linux-control-groups-and-process)
+
+## What is Multus Container Network Interface (CNI) ?
+
+Multus CNI enables attaching multiple network interfaces to pods in Kubernetes.
+
+- [k8snetworkplumbingwg/multus-cni](https://github.com/k8snetworkplumbingwg/multus-cni)
+- [Using the Multus CNI in OpenShift](https://www.openshift.com/blog/using-the-multus-cni-in-openshift)
+
 ## What is blue green deployment?
 
 Blue green deployment is an application release model that gradually transfers user traffic from a previous version of an app or microservice to a nearly identical new release—both of which are running in production. 
@@ -311,4 +328,5 @@ Blue green deployment is an application release model that gradually transfers u
 ## How to Size an OpenShift Cluster ?
 
 - [OpenShift sizing and subscription guide for enterprise Kubernetes](https://www.redhat.com/en/resources/OpenShift-subscription-sizing-guide-detail)
+- [Everything about Infra nodes](https://www.youtube.com/watch?v=9VNjDh1vPXI) - Video
 ## Reference
