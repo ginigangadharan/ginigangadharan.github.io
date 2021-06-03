@@ -37,7 +37,6 @@ titleshort: OpenShift Questions
 - [What Red Hat Advanced Cluster Security for Kubernetes (RHACS) ?](#what-red-hat-advanced-cluster-security-for-kubernetes-rhacs-)
 - [What are the components of OpenShift Cluster Monitoring, Logging and Telemetry ?](#what-are-the-components-of-openshift-cluster-monitoring-logging-and-telemetry-)
 - [What is `cadvisor` in kubernetes ?](#what-is-cadvisor-in-kubernetes-)
-- [TODO/ What is `cgroup` ?](#todo-what-is-cgroup-)
 - [TODO/ What is Helm ?](#todo-what-is-helm-)
 - [What are the points to note while architecting OpenShift Clusters ?](#what-are-the-points-to-note-while-architecting-openshift-clusters-)
 - [How to Manage Roles and Permissons in OpenShift ?](#how-to-manage-roles-and-permissons-in-openshift-)
@@ -257,9 +256,6 @@ cAdvisor is an open-source agent integrated into the kubelet binary that monitor
 - [Native Kubernetes Monitoring, Part 1: Monitoring and Metrics for Users](https://rancher.com/blog/2019/native-kubernetes-monitoring-tools-part-1)
 - [MONITORING DOCKER CONTAINER METRICS USING CADVISOR](https://prometheus.io/docs/guides/cadvisor/)
 
-## TODO/ What is `cgroup` ?
-
-
 ## TODO/ What is Helm ?
 
 ## What are the points to note while architecting OpenShift Clusters ? 
@@ -284,11 +280,12 @@ cAdvisor is an open-source agent integrated into the kubelet binary that monitor
 Keystone is an OpenStack project that provides identity, token, catalog, and policy services. You can configure the integration with Keystone so that the new OpenShift Container Platform users are based on either the Keystone user names or unique Keystone IDs. 
 
 - [What is keystone federation?](https://docs.openstack.org/keystone/latest/admin/federation/introduction.html)
+
 ## Removing the kubeadmin user
 
 After you define an identity provider and create a new `cluster-admin` user, you can remove the `kubeadmin` to improve cluster security.
 
-**Warning: ** If you follow this procedure before another user is a cluster-admin, then OpenShift Container Platform must be reinstalled. It is not possible to undo this command.
+***Warning:** If you follow this procedure before another user is a cluster-admin, then OpenShift Container Platform must be reinstalled. It is not possible to undo this command.*
 
 **Prerequisites**
 
