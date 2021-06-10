@@ -24,8 +24,10 @@ showindex: true
 
 ## 1.1. Ansible Tower Installation and Reference Guide v3.6.1
 
-https://docs.ansible.com/ansible-tower/latest/html/installandreference/index.html
+(https://docs.ansible.com/ansible-tower/latest/html/installandreference/index.html)[https://access.redhat.com/articles/3344101]
 
+
+Guidelines, Troubleshooting, and Recommended Configurations for Ansible Tower
 ## 1.2. Ansible Tower Quick Installation Guide v3.6.1
 
 https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html
