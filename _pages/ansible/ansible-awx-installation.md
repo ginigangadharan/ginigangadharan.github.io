@@ -17,7 +17,6 @@ Ref:
 - [Ansible AWX Project](https://github.com/ansible/awx)
 - [Introduction to Ansible AWX Project](https://www.doag.org/formes/pubfiles/10846538/2018-DO-Alexander_Hofstetter-Einfuehrung_in_Ansible_AWX_Project_der_quot_freie_quot_Ansible_Tower-Praesentation.pdf)
 - [AWX Command Line Interface](https://github.com/ansible/awx/tree/devel/awxkit/awxkit/cli)
-
 - [3. Install AWX Using Ansible](#3-install-awx-using-ansible)
   - [3.1. Configure AWX Node for Ansible](#31-configure-awx-node-for-ansible)
   - [3.2. Install Pre-Req roles](#32-install-pre-req-roles)
