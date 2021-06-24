@@ -106,7 +106,7 @@ $ echo "$(<kubectl.sha256) kubectl" | sha256sum --check
 $ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 
-*Note: if you issue sudo access or other thing try below.*
+*Note: if you have issue with `sudo` access or other thing try below.*
 
 ```shell
 # Make the kubectl binary executable.
