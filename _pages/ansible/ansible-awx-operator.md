@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ansible AWX Operator
+title: Install Ansible AWX using AWX Operator (on Kubernetes)
 categories: [ ansible ]
 tags: [ansible]
 show-avatar: false
