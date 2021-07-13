@@ -34,6 +34,7 @@ You have hundreds and thousands of online documentation and wiki pages for learn
 
 - [Ansible for Absolute Beginners](#ansible-for-absolute-beginners)
 - [Ansible Videos for Beginners](#ansible-videos-for-beginners)
+- [Ansible - Frequently Asked Questions](#ansible---frequently-asked-questions)
 - [Ansible Playbook References](#ansible-playbook-references)
 - [Tools for Ansible](#tools-for-ansible)
 - [Ansible for Network Automation](#ansible-for-network-automation)
@@ -52,6 +53,20 @@ You have hundreds and thousands of online documentation and wiki pages for learn
 
 - [Introduction to Ansible - Webinar](https://www.youtube.com/watch?v=iVWmbStE1MM){:target="_blank"} (YouTube)
 - [Ansible - A Beginner's Tutorial](https://www.youtube.com/watch?v=icR-df2Olm8){:target="_blank"} (YouTube)
+
+# Ansible - Frequently Asked Questions
+
+1.	What is Ansible?
+2.	What is IaC? 
+3.	What can Ansible do?
+4.	What are the advantages of Ansible?
+5.	How does Ansible work?
+6.	What is a Playbook?
+7.	Are there any requirements for using Ansible?
+8.	What is DevOps?
+9.	How does Ansible fit into DevOps?
+10.	Who is Ansible for? Who should learn Ansible?
+11.	What are prerequisites to learning Ansible?
 
 # Ansible Playbook References
 
